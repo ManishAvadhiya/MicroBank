@@ -9,6 +9,7 @@ export default function Login() {
   const [pass, setPass] = useState("");
   const [error, setError] = useState("");
   const router = useRouter();
+
   const handleOnSubmit = (e) => {
     e.preventDefault(); // Prevent page refresh
 
@@ -22,7 +23,6 @@ export default function Login() {
       setError("");
       alert("Agent Login Successful!");
       router.push("/agent/dashboard");
-
     } else {
       setError("Invalid Aadhar Number or Password.");
     }
@@ -31,6 +31,17 @@ export default function Login() {
   return (
     <div className="min-h-screen flex justify-center items-center bg-gray-50 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full bg-white p-8 shadow-md rounded-md absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        
+        {/* Information Box */}
+        <div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-4 rounded">
+          <p><strong>Note:</strong> This website is for testing purposes only and is not the final product.</p>
+          <p>You can test the website using the following credentials:</p>
+          <ul className="list-disc ml-6">
+            <li>User: Aadhar - <strong>12345678</strong>, Password - <strong>12345678</strong></li>
+            <li>Agent: Aadhar - <strong>87654321</strong>, Password - <strong>87654321</strong></li>
+          </ul>
+        </div>
+
         <h2 className="text-center text-2xl font-bold text-gray-900 mb-6">
           Sign in to your account
         </h2>
